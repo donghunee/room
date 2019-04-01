@@ -1,0 +1,91 @@
+<h1>생활패턴 조사</h1>
+
+<form method="POST" action="{% url 'upload'%}">
+{% csrf_token %}
+    이름:
+    <br>
+    <input name="name" type="text" value="" style="height:25px;width:150px;"><br>
+    성별:
+    <br>
+    <select name="sex" style="width:150px;height:25px;">
+        <option value="">성별 선택</option>
+        <option value="he">남자</option>
+        <option value="she">여자</option>
+    </select>
+    <br>
+    주 활동 시간:
+    <br>
+    <select name="time" style="width:150px; height:25px;">
+        <option value="">활동 시간</option>
+        <option value="주간">주간</option>
+        <option value="야간">야간</option>
+    </select>
+    <br>
+    성격:
+    <br>
+    <select name="person" style="width:150px;height:25px;">
+        <option value="">성격 선택</option>
+        <option value="활발">활발함</option>
+        <option value="소극">소극적</option>
+    </select>
+    <br>
+    관심분야:
+    <br>
+    <select name="attention" style="width:150px;height:25px;">
+        <option value="">관심영역</option>
+        <option value="song">노래</option>
+        <option value="movie">영화</option>
+        <option value="book">책</option>
+    </select>
+    <br>
+    <br>
+    <h1>우선 순위</h1>
+    1순위
+    <select name="one" style="width:150px; height:25px;">
+        <option value="time">주 활동 시간</option>
+        <option value="person">성격</option>
+        <option value="attention">관심분야</option>
+    </select><br><br>
+    2순위
+    <select name="two" style="width:150px; height:25px;">
+        <option value="time">주 활동 시간</option>
+        <option value="person">성격</option>
+        <option value="attention">관심분야</option>
+    </select><br><br>
+    3순위
+    <select name="thr" style="width:150px; height:25px;">
+        <option value="time">주 활동 시간</option>
+        <option value="person">성격</option>
+        <option value="attention">관심분야</option>
+    </select><br><br>
+  
+    <input class="btn btn-primary" type="submit" value="제출하기">
+</form>
+
+<script language="JavaScript">
+
+    function jsChangeOrder() {
+        var form = document.mainForm;
+        var se = document.getElementsByName("mgrRank"); 
+        var rank1;
+        var rank2;
+
+        for(j=0;j<se.length;j++){
+            rank1 = form.mgrRank[j].value;
+            if("" == rank1){window.alert("게시판명을 입력하세요."); return false;}
+        
+            if(se.length > j+1){
+                for(i=(j+1);i<4;i++){
+                    rank2 = form.mgrRank[i].value;
+                    if(rank1 == rank2){
+                        alert('중복된값이 있습니다.');
+//                        return false; 
+                    }
+                }
+            }            
+        }
+        
+//        form.action = "";
+//        form.submit();
+    }
+</script>

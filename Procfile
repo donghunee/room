@@ -1,0 +1,1 @@
+web: gunicorn romate.wsgi --log-file -

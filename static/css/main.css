@@ -1,0 +1,36 @@
+@charset "UTF-8";
+@font-face { font-family: 'gog'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/YiSunShinDotumM.woff') format('woff'); font-weight: normal; font-style: normal; }
+
+.main{
+    width: 100%;
+    background-size: cover;
+    height: 750px;
+    background-attachment: fixed;
+    background:url('/static/images/back.png');
+}
+
+.bibi{
+    position: relative;
+    top:30%;
+}
+.ma{
+    font-family:"gog";
+}
+.baton{
+    font-weight: 500;
+    color: #7C4DFF;
+    font-family:"gog";
+}
+.mii{
+    height: 600px;
+}
+
+.mii .row{
+    padding-top: 30px;
+}
+
+.mid{
+    position: relative;
+    background:#f1f3ff;
+    height: 700px;
+}
